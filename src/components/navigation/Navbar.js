@@ -31,7 +31,8 @@ function Navbar(){
                 </Link>
                 <div className="ml-4 mt-2 flex-shrink-0">
                 <NavLink to='/remedios' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-green-500 mx-4">Remedios</NavLink>
-                <NavLink to='/nosotros' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-green-500 mx-4">Nosotros</NavLink>
+                <NavLink to='/comunidad' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-green-500 mx-4">Comunidad</NavLink>
+                <NavLink to='/nosotros' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-green-500 mx-4">Sobre Nosotros</NavLink>
                 <NavLink to='/contacto' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-green-500 mx-4">Contacto</NavLink>
                 <button
                     type="button"

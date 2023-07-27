@@ -1,3 +1,5 @@
+import Header from "components/about/Header"
+import Team from "components/about/Team"
 import Footer from "components/navigation/Footer"
 import NavBar from "components/navigation/Navbar"
 import Layout from "hocs/layouts/Layout"
@@ -7,7 +9,8 @@ function About(){
         <Layout>
             <NavBar/>
             <div className="pt-28">
-                Nosotros
+                <Header/>
+                <Team/>
             </div>
             <Footer/>
         </Layout>
