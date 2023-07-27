@@ -6,6 +6,7 @@ import Error404 from "containers/errors/Error404";
 import Home from "containers/pages/Home";
 import About from "containers/pages/About";
 import Contact from "containers/pages/Contact";
+import Remedie from "containers/pages/Remedies";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 
             {/* Home Display */}
             <Route path="/" element={<Home/>} />
+            <Route path="/remedios" element={<Remedie/>} />
             <Route path="/nosotros" element={<About/>} />
             <Route path="/contacto" element={<Contact/>} />
         </Routes>
