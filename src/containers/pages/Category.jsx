@@ -5,33 +5,35 @@ import { Helmet } from 'react-helmet-async'
 import { useEffect } from "react"
 import { get_categories } from "redux/actions/categories/categories";
 import { connect } from "react-redux";
-import { get_blog_list , get_blog_list_page } from "redux/actions/remedies/remedies"
+import { get_blog_list_category , get_blog_list_category_page } from "redux/actions/remedies/remedies"
 import CategoriesHeader from "components/blog/CategoriesHeader"
-import BlogList from "components/blog/BlogList";
+import { useParams } from "react-router-dom"
 
 
-function Remedie({
+function Category({
     get_categories,
+    get_blog_list_category,
+    get_blog_list_category_page,
     categories,
-    get_blog_list,
-    get_blog_list_page,
-    posts,
     count,
     next,
-    previous,
+    previous
 }){
+
+    const params = useParams()
+    const slug = params.slug
 
     useEffect(()=>{
         window.scrollTo(0,0)
         get_categories()
-        get_blog_list()
+        get_blog_list_category(slug)
     },[])
 
 
     return(
         <Layout>
             <Helmet>
-                <title>HerbaCare | Remedios</title>
+                <title>HerbaCare | Categoria: {slug}</title>
                 <meta name="description" content="Plantas Medicinales, Recetas Medicinales todo aqui en nuestra pagina HerbaCare"/>
                 <meta name="keywords" content="plantas medicinales, hierbas medicinales, remedios caseros" />
                 <meta name="author" content="HerbaCare" />
@@ -39,14 +41,6 @@ function Remedie({
             <NavBar/>
             <div className="pt-24">
                 <CategoriesHeader categories={categories&&categories}/>
-
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                {/* We've used 3xl here, but feel free to try other max-widths based on your needs */}
-                <div className="mx-auto max-w-6xl my-10">
-                    {/* Content goes here */}
-                    <BlogList posts={posts&&posts} get_blog_list_page={get_blog_list_page} count={count&&count}/>
-                    </div>
-                </div>
             </div>
             <Footer/>
         </Layout>
@@ -54,7 +48,7 @@ function Remedie({
 }
 const mapStateToProps=state=>({
     categories: state.categories.categories,
-    posts: state.remedies.blog_list,
+    posts: state.remedies.blog_list_category,
     count: state.remedies.count,
     next: state.remedies.next,
     previous: state.remedies.previous,
@@ -63,6 +57,6 @@ const mapStateToProps=state=>({
 
 export default connect(mapStateToProps,{
     get_categories,
-    get_blog_list,
-    get_blog_list_page
-}) (Remedie)
+    get_blog_list_category,
+    get_blog_list_category_page
+}) (Category)

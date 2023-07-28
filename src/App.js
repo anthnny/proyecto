@@ -1,30 +1,26 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import store from "./store";
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { Provider } from "react-redux";
 
-import Error404 from "containers/errors/Error404";
-import Home from "containers/pages/Home";
-import About from "containers/pages/About";
-import Contact from "containers/pages/Contact";
-import Remedie from "containers/pages/Remedies";
+import AnimatedRoutes from "Routes";
 
 
 function App() {
   return (
-    <Provider store={store}>
+    <HelmetProvider>
+      <Helmet>
+        <title>HerbaCare</title>
+        <meta name="description" content="Plantas Medicinales, Recetas Medicinales todo aqui en nuestra pagina HerbaCare"/>
+        <meta name="keywords" content="plantas medicinales, hierbas medicinales, remedios caseros" />
+        <meta name="author" content="HerbaCare" />
+      </Helmet>
+      <Provider store={store}>
       <Router>
-        <Routes>
-            {/* Error Display */}
-            <Route path="*" element={<Error404/>} />
-
-            {/* Home Display */}
-            <Route path="/" element={<Home/>} />
-            <Route path="/remedios" element={<Remedie/>} />
-            <Route path="/nosotros" element={<About/>} />
-            <Route path="/contacto" element={<Contact/>} />
-        </Routes>
+        <AnimatedRoutes/>
       </Router>
     </Provider>
+    </HelmetProvider>
   );
 }
 
