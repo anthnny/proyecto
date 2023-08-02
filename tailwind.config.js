@@ -11,6 +11,9 @@ module.exports = {
         "aquam-button": '#7fb395',
         "verdeo-button": '#3c3d29',
         "cafecl-bg": '#ffe0c3'
+      },
+      maxWidth: {
+        '1700': '1700px',
       }
     },
     boxShadow: {

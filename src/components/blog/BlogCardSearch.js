@@ -10,14 +10,10 @@ function BlogCardSearch({data,index}){
         >
             <Link to={`/remedios/${data.slug}`}
                 onMouseEnter={()=>{
-                    // const img = document.getElementById(index)
-                    // img.classList.add('object-fill')
                     const title = document.getElementById(`title`+data.id)
                     title.classList.add('text-orange-500')
                 }} 
                 onMouseLeave={()=>{
-                    // const img = document.getElementById(index)
-                    // img.classList.remove('object-fill')
                     const title = document.getElementById(`title`+data.id)
                     title.classList.remove('text-orange-500')
                 }}

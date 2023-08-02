@@ -7,7 +7,7 @@ import {
     GET_BLOG_LIST_CATEGORIES_FAIL,
     GET_SEARCH_BLOG_SUCCESS,
     GET_SEARCH_BLOG_FAIL
-} from '../actions/remedies/types';
+} from '../actions/blog/types';
 
 const initialState = {
     blog_list: null,
@@ -21,6 +21,7 @@ const initialState = {
 
 export default function blog(state = initialState, action) {
     const { type, payload } = action;
+
 
     switch(type) {
         case GET_BLOG_LIST_CATEGORIES_SUCCESS:

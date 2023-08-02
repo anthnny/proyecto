@@ -3,7 +3,7 @@ import logoo from 'assets/img/logoo.png'
 
 const navigation = {
     enlaces: [
-      { name: 'Medicamentos', href: '#' },
+      { name: 'Remedios', href: '#' },
       { name: 'Nosotros', href: '#' },
       { name: 'Contacto', href: '#' },
     ],

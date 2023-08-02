@@ -12,11 +12,16 @@ function Home(){
         <Layout>
             <NavBar/>
             <div className="pt-28">
+            <div className="mx-auto max-w-1700 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-1700">
                 <Header/>
                 <Incentives/>
                 <Remedies/>
                 <CTA/>
                 <BlogList/>
+            </div>
+            </div>
+
             </div>
             <Footer/>
         </Layout>

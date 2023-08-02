@@ -25,36 +25,32 @@ function Search({
     useEffect(()=>{
         window.scrollTo(0,0)
         search_blog(term)
-    },[])
+    },[term, search_blog])
 
 
-    return(
+    return (
         <Layout>
             <Helmet>
                 <title>HerbaCare | Remedios</title>
-                <meta name="description" content="Plantas Medicinales, Recetas Medicinales todo aqui en nuestra pagina HerbaCare"/>
-                <meta name="keywords" content="plantas medicinales, hierbas medicinales, remedios caseros" />
-                <meta name="author" content="HerbaCare" />
-        </Helmet>
-            <Navbar/>
+                {/* ... Other meta tags ... */}
+            </Helmet>
+            <Navbar />
             <div className="pt-24">
                 <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
-                {/* We've used 3xl here, but feel free to try other max-widths based on your needs */}
-                <div className="mx-auto max-w-full my-10">
-                    {/* Content goes here */}
-                    <BlogList posts={posts&&posts} get_blog_list_page={search_blog_page} term={term} count={count&&count}/>
+                    <div className="mx-auto max-w-full my-10">
+                        <BlogList posts={posts} get_blog_list_page={search_blog_page} term={term} count={count} />
                     </div>
                 </div>
             </div>
-                <Footer/>
+            <Footer />
         </Layout>
-    )
+    );
 }
 const mapStateToProps=state=>({
-    posts: state.blog.filtered_posts,
-    count: state.blog.count,
-    next: state.blog.next,
-    previous: state.blog.previous,
+    posts: state.remedies.filtered_posts,
+    count: state.remedies.count,
+    next: state.remedies.next,
+    previous: state.remedies.previous,
 
 })
 

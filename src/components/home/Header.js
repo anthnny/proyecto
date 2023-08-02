@@ -1,11 +1,10 @@
- import { Typewriter } from "react-simple-typewriter"
-import herba from "assets/img/herba.png"
+import { Typewriter } from "react-simple-typewriter"
 
 function Header(){
     return(
         <main>
-        <div className="relative px-6 lg:px-8">
-          <div className="mx-auto max-w-full xl:mx-12 xl:pt-40 xl:pb-30 lg:pt-40 lg:pb-48 pt-24 pb-12  ">
+        <div className="relative ">
+          <div className="mx-auto xl:mx-12 xl:pt-48 xl:pb-64 lg:pt-40 lg:pb-48 pt-24 pb-12  ">
             <div>
               <div>
                 <h1 className="text-4xl font-semibold tracking-tight pb-16 sm:text-7xl">
@@ -20,8 +19,6 @@ function Header(){
                             typeSpeed={120}
                             deleteSpeed={50}
                             delaySpeed={1000}
-                            // onLoopDone={handleDone}
-                            // onType={handleType}
                         />
                     </div>
                 </h1>
@@ -31,24 +28,16 @@ function Header(){
                 </p>
                 <div className="mt-8 flex gap-x-4">
                   <a
-                    href="#"
+                    href="/remedios"
                     className="inline-block rounded-lg bg-green-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-white-600 hover:bg-green-700 hover:ring-green-700"
-                  >
-                    Iniciar Sesión
-                  </a>
-                  <a
-                    href="#"
-                    className="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                   >
                     Ver Remedios
                   </a>
                 </div>
               </div>
-              <div className="absolute top-[calc(100%-15rem)] -z-10 transform-gpu overflow-hidden bg-white lg:top-[calc(100%-43rem)] sm:top-[calc(100%-28rem)] right-20 w-1/3">
-                <img src={herba} className='w-full h-auto object-cover'/>
+              <div className="absolute top-[calc(100%-20rem)] -z-10 transform-gpu overflow-hidden bg-white lg:top-[calc(100%-45rem)] sm:top-[calc(100%-30rem)] right-20 w-1/3">
+                <img src="https://bafybeidlzoertkt2dnsvg75pafwxzll2uughbiuklwi5eeyexbdq7fc7rq.ipfs.w3s.link/herba.png" className='w-full h-auto object-cover'/>
               </div>
-
-
             </div>
           </div>
         </div>

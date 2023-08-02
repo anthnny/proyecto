@@ -25,11 +25,11 @@ function AnimatedRoutes(){
             {/* Home Display */}
             <Route path="/" element={<Home/>} />
             <Route path="/remedios" element={<Remedie/>} />
-            <Route path="/remedios/:slug" element={<PostDetail/>} />
-            <Route path="/s=:term" element={<Search/>} />
+            <Route path="/remedios/:slug" element={<PostDetail />} />
+            <Route path="/search" element={<Search/>} />
             <Route path="/category/:slug" element={<Category/>} />
             <Route path="/nosotros" element={<About/>} />
-            <Route path="/contacto" element={<Contact/>} />
+            <Route path="/contacto" element={<Contact />} />
         </Routes>
         
         </AnimatePresence>
